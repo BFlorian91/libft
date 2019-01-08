@@ -6,7 +6,7 @@
 /*   By: flbeaumo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 14:41:31 by flbeaumo          #+#    #+#             */
-/*   Updated: 2018/11/29 00:57:23 by florian          ###   ########.fr       */
+/*   Updated: 2018/11/17 14:20:06 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,10 @@ int	ft_strequ(char const *s1, char const *s2)
 {
 	if (s1 != NULL && s2 != NULL)
 	{
-		while (*s1 == *s2)
+		while (*s1++ == *s2++)
 		{
 			if (!*s1 && !*s2)
 				return (1);
-			++s1;
-			++s2;
 		}
 	}
 	return (0);

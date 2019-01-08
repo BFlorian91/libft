@@ -6,7 +6,7 @@
 /*   By: flbeaumo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 14:02:27 by flbeaumo          #+#    #+#             */
-/*   Updated: 2018/11/17 14:19:47 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2018/12/11 17:37:58 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		ft_strclen(char *s, char c)
 	int	i;
 
 	i = 0;
-	while (*s && s[i] != c)
+	while (s[i] && s[i] != c)
 		++i;
 	return (i);
 }
