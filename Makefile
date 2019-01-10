@@ -6,7 +6,7 @@
 #    By: flbeaumo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/15 14:08:19 by flbeaumo          #+#    #+#              #
-#    Updated: 2019/01/11 00:40:24 by florian          ###   ########.fr        #
+#    Updated: 2019/01/11 00:43:31 by florian          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #
@@ -46,11 +46,11 @@ $(NAME): $(OBJ)
 
 clean:
 	@rm -rf $(OBJ)
-#	@echo "\033[1;31m Remove Object:\033[0m			\033[0;32m [OK] \033[0m"
+	@echo "\033[1;31m Remove Object:\033[0m			\033[0;32m [OK] \033[0m"
 
 fclean: clean
 	@rm -rf $(NAME)
-#	@echo "\033[1;31m Remove Binary:\033[0m			\033[0;32m [OK] \033[0m"
+	@echo "\033[1;31m Remove Binary:\033[0m			\033[0;32m [OK] \033[0m"
 
 re: fclean all
 
