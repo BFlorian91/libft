@@ -6,7 +6,7 @@
 #    By: flbeaumo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/15 14:08:19 by flbeaumo          #+#    #+#              #
-#    Updated: 2018/11/26 19:18:10 by flbeaumo         ###   ########.fr        #
+#    Updated: 2019/01/10 14:29:28 by flbeaumo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #
@@ -25,7 +25,7 @@ SRCS = ft_strlen.c ft_memset.c ft_bzero.c ft_strcmp.c ft_memcpy.c \
 	   ft_strjoin.c ft_strtrim.c ft_strmapi.c ft_is_space.c ft_strsplit.c \
 	   ft_strclen.c ft_strndup.c ft_strlcat.c ft_itoa.c ft_lstnew.c \
 	   ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c \
-	   ft_power.c ft_print_words_tables.c ft_lstlen.c
+	   ft_power.c ft_print_words_tables.c ft_lstlen.c get_next_line.c \
 
 OBJ = $(SRCS:.c=.o)
 
