@@ -6,7 +6,7 @@
 #    By: flbeaumo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/15 14:08:19 by flbeaumo          #+#    #+#              #
-#    Updated: 2019/01/10 14:29:28 by flbeaumo         ###   ########.fr        #
+#    Updated: 2019/01/11 00:02:11 by florian          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #
@@ -38,15 +38,19 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@ar rc $(NAME) $^
 	@ranlib $(NAME)
+	@echo "\033[0;32m		 		 [SUCESS] \033[0m"
 
 %.o: %.c
 	@$(CC) -o $@ -c $< $(CFLAGS)
+	@echo "\033[0;33m Compiling:\033[0m			\033[0;32m [OK] \033[0m" $<
 
 clean:
-	rm -rf $(OBJ)
+	@rm -rf $(OBJ)
+	@echo "\033[1;31m Remove Object:\033[0m			\033[0;32m [OK] \033[0m"
 
 fclean: clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
+	@echo "\033[1;31m Remove Binary:\033[0m			\033[0;32m [OK] \033[0m"
 
 re: fclean all
 
