@@ -6,7 +6,7 @@
 #    By: flbeaumo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/15 14:08:19 by flbeaumo          #+#    #+#              #
-#    Updated: 2019/01/11 00:43:31 by florian          ###   ########.fr        #
+#    Updated: 2019/01/11 13:03:07 by florian          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #
@@ -29,11 +29,20 @@ SRCS = ft_strlen.c ft_memset.c ft_bzero.c ft_strcmp.c ft_memcpy.c \
 
 OBJ = $(SRCS:.c=.o)
 
+INC = libft.h get_next_line.h
+
 CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-all: $(NAME)
+all: copy
+
+copy:
+	@cp includes/*.h .
+	@cp lib-funcs/*.c .
+	@cp bonus-funcs/*.c .
+	@cp personal-funcs/*.c .
+	@make $(NAME)
 
 $(NAME): $(OBJ)
 	@ar rc $(NAME) $^
@@ -45,7 +54,7 @@ $(NAME): $(OBJ)
 	@echo "\033[0;33m Compiling:\033[0m			\033[0;32m [OK] \033[0m" $<
 
 clean:
-	@rm -rf $(OBJ)
+	@rm -rf $(OBJ) $(SRCS) $(INC)
 	@echo "\033[1;31m Remove Object:\033[0m			\033[0;32m [OK] \033[0m"
 
 fclean: clean
@@ -53,4 +62,3 @@ fclean: clean
 	@echo "\033[1;31m Remove Binary:\033[0m			\033[0;32m [OK] \033[0m"
 
 re: fclean all
-
