@@ -6,7 +6,7 @@
 /*   By: flbeaumo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 15:12:06 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/04/10 19:36:11 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/05/22 17:15:12 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+
+
 size_t				ft_strlen(const char *str);
 void				ft_putstr(const char *s);
 void				ft_putnbr(int n);
@@ -39,8 +41,12 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putendl(char const *s);
 void				ft_putendl_fd(char const *s, int fd);
+
+
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
+
+
 int				ft_strcmp(const char *s1, const char *s2);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
@@ -66,12 +72,16 @@ void				*ft_memchr(const void *s, int c, size_t n);
 char				*ft_strstr(const char *haystack, const char *needle);
 char				*ft_strnstr(const char *haystack, const char *needle,
 				size_t len);
+
+
 void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memalloc(size_t size);
 void				ft_memdel(void **ap);
 char				*ft_strnew(size_t size);
 void				ft_strdel(char **as);
 void				ft_strclr(char *s);
+
+
 void				ft_striter(char *s, void (*f)(char *));
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 char				*ft_strmap(char const *s, char (*f)(char));
@@ -84,6 +94,8 @@ char				*ft_itoa(int n);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				**ft_strsplit(char const *s, char c);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
+
+
 int				ft_power(int nb, int power);
 int				ft_is_space(char c);
 void				ft_print_words_tables(char **tab);
@@ -94,5 +106,7 @@ int				ft_sqrt(int nb);
 void				ft_lstaddlast(t_list **start, t_list *new);
 size_t				sort_int(size_t a, size_t b);
 void				ft_putint(int *tab, int size);
+int				ft_intlen(int nb);
+char				*ft_strrev(char *str);
 
 #endif

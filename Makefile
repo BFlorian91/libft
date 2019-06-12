@@ -6,7 +6,7 @@
 #    By: flbeaumo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/15 14:08:19 by flbeaumo          #+#    #+#              #
-#    Updated: 2019/04/10 19:31:50 by flbeaumo         ###   ########.fr        #
+#    Updated: 2019/06/12 07:28:47 by flbeaumo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #
@@ -26,8 +26,12 @@ SRCS = ft_strlen.c ft_memset.c ft_bzero.c ft_strcmp.c ft_memcpy.c \
 	   ft_strclen.c ft_strndup.c ft_strlcat.c ft_itoa.c ft_lstnew.c \
 	   ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c \
 	   ft_power.c ft_print_words_tables.c ft_lstlen.c get_next_line.c \
-	   ft_sqrt.c ft_lstaddlast.c sort_int.c ft_putint.c\
+	   ft_sqrt.c ft_lstaddlast.c sort_int.c ft_putint.c ft_intlen.c\
+	   ft_strrev.c
 
+PRINTF_PATH = personal-funcs/ft_printf/
+
+PRINTF = personal-funcs/ft_printf/libftprintf.a
 
 OBJ = $(SRCS:.c=.o)
 
@@ -59,15 +63,23 @@ $(NAME): $(OBJ)
 	@ar rc $(NAME) $^
 	@ranlib $(NAME)
 
-%.o: %.c
+%.o: %.c $(PRINTF)
 	@$(CC) -o $@ -c $< $(CFLAGS)
 	@echo "\033[1A $(YELLOW)Compiling:$(LBLUE) $< \033[K 	$(GREEN) [OK] $(NC)"
 
+$(PRINTF):
+	@make -C $(PRINTF_PATH)
+
 clean:
 	@rm -rf $(OBJ) $(SRCS) $(INC)
+	@make clean -C $(PRINTF_PATH)
+	@echo "$(RED) Remove Object:$(NC)			$(GREEN) [OK] $(NC)" $<
 
 fclean: clean
 	@rm -rf $(NAME)
+	@rm -rf libftprintf.a
+	@make fclean -C $(PRINTF_PATH)
+	@echo "$(RED) Remove Binary:$(NC)			$(GREEN) [OK] $(NC)"
 
 re: fclean all
 
